@@ -1,2 +1,2 @@
-# demo20
-Demo repo for comp 20 HTML page upload
+# Comp20Assignments
+Assignment submission repo for Comp 20: Web Programming
