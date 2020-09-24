@@ -4,6 +4,32 @@
 	<title>John's Flowerie: Contact</title>
 	<link rel="stylesheet" href="global_styles.css">
 	<meta charset=“UTF-8”>
+	<style type="text/css">
+        .row {
+          display: flex;
+        }
+
+        .column {
+          flex: 50%;
+        }
+
+        .form_section{
+        	float: left;
+        	margin-left: 10%;
+        	margin-top: 10px;
+        }
+
+        input[type=submit] {
+        	background-color: rgb(255, 90, 142);
+        	border: none;
+        	cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+        	background-color: rgb(176, 0, 70);
+        }
+
+	</style>
 </head>
 <body>
     <span class="header">
@@ -16,7 +42,76 @@
     </span>
 
     <span class="page_content">
-    	<div>This is test text.</div>
+    	<div class="row">
+            <div class="column">
+            	<h1>Order</h1>
+            	<form style=" overflow: hidden; border: 1px solid black;">
+                    <span class="form_section">
+            		<div><strong>Order Type</strong></div>
+            		<input type="radio" id="delivery" name="order_type" value="delivery">
+                    <label for="delivery">Delivery</label><br>
+                    <input type="radio" id="pickup" name="order_type" value="pickup">
+                    <label for="pickup">In-store Pickup</label><br>
+                    </span>
+
+                    <span class="form_section">
+            		<div><strong>Contact Info</strong></div>
+            		<label for="first_name">First Name:</label>
+            		<input type="text" id="first_name" placeholder="ex: John"></br>
+            		<label for="last_name">Last Name:</label>
+            		<input type="text" id="last_name" placeholder="ex: Little"></br>
+            		<label for="phone">Phone:</label>
+            		<input type="text" id="phone" maxlength="3" size="3" placeholder="123">-
+            		<input type="text" id="phone" maxlength="3" size="3" placeholder="456">-
+            		<input type="text" id="phone" maxlength="4" size="4" placeholder="7890">
+                    </span>
+
+                    <span class="form_section">
+                    	<div><strong>Delivery Address (if applicable)</strong></div>
+                    	<label for="street">Street:</label>
+                    	<input type="text" id="street" placeholder="ex: 123 Street Rd" size="39"><br>
+                    	
+                    	<label for="apt">Apt:</label>
+                    	<input type="text" id="apt" size="6" placeholder="ex: C12">
+
+                    	<label for="zip">Zip Code:</label>
+                    	<input type="text" id="zip" placeholder="ex: 03285" size="9">
+
+                    	<label for="state">State:</label>
+                    	<input type="text" id="state" placeholder="ex: NH" size="6">
+                    </span>
+
+                    <span class="form_section">
+                    	<div><strong>Instructions</strong></div>
+                    	<textarea name="instructs" rows="10" cols="50" placeholder="ex: 9 classic rose bouquets delivered to the doorstep."></textarea>
+                    </span>
+ 
+                    <span class="form_section" style="margin-bottom: 10px; width: 100%;">
+                        <input type = "submit" value = "Place Order!"/>
+                    </span>
+            	</form>
+            </div>
+            <div class="column" style="text-align: center;">
+            	<h1>Contact</h1>
+            	<div><strong>Phone</strong></div>
+            	<div>603-123-4567</div>
+            	<br>
+            	<div><strong>Email</strong></div>
+            	<div>support@johns-flowerie.com</div>
+            	<br>
+            	<div><strong>Address</strong></div>
+                <div>346 Boston Ave</div>
+                <div>Medford, MA 02155</div>
+                <br>
+                <div><strong>Our Customer Satisfaction Guarantee...</strong></div>
+                <div style="margin-left: 10%; margin-right: 10%;">
+                	We like you. Is it too soon to say that? We care so much about your happiness that we hired a bunch of the best, nicest, most awesome human beings we could find to help with anything you need. We call them John's Happiness Helpers, and they're your go-to when you need a recommendation, a refund, or just a reason to smile. Seriously, reach out. Even just to say hi.
+                </div>
+                <br>
+                <img src="images/satisfied.png" style="width: 100px; height: 100px;">
+
+            </div>
+        </div>
     </span>
 
     <span class="footer">

@@ -13,6 +13,7 @@
 
 .header_title {
     text-align: center;
+    font-family: lemon-milk;
     font-size: 300%;
 }
 
@@ -36,6 +37,7 @@ li a {
 	padding: 16px 14px;
 	text-decoration: none;
 	font-size: 200%;
+	font-family: caviar-dreams;
 	color: rgb(0, 0, 0);
 }
 
@@ -71,8 +73,27 @@ hr {
     margin-right: 8%;
 }
 
+strong {
+	font-family: caviar-dreams-bold;
+}
+
 h1 {
+	font-family: lemon-milk;
 	text-align: center;
 }
 
+@font-face {
+	font-family: caviar-dreams;
+	src: url(caviar_dreams/caviar_dreams.ttf);
+}
+
+@font-face {
+	font-family: caviar-dreams-bold;
+	src: url(caviar_dreams/caviar_dreams_bold.ttf);
+}
+
+@font-face {
+	font-family: lemon-milk;
+	src: url(lemon_milk/lemon_regular.otf);
+}
 
