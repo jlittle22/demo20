@@ -52,8 +52,8 @@ hr {
 
 .footer {
 	display: block;
-	position: fixed;
 	background-color: rgb(255, 90, 142);
+	position: fixed;
 	background-clip: content-box;
 	height: 4%;
 	bottom: 0px;
@@ -71,7 +71,17 @@ hr {
     margin-top: 11%;
     margin-left: 8%;
     margin-right: 8%;
+    margin-bottom: 4%;
 }
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
 
 strong {
 	font-family: caviar-dreams-bold;
