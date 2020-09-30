@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="song_style.css"?>
+<songs-list>
+	<song>
+		<title>T-Shirt</title>
+		<opb>Foo Fighters</opb>
+		<genre>Alternative</genre>
+		<year>2017</year>
+	</song>
+
+	<song>
+		<title>Dreams</title>
+		<opb>Beck</opb>
+		<genre>Rock</genre>
+		<year>2015</year>
+	</song>
+
+	<song>
+		<title>Never Give Up On Me</title>
+		<opb>MisterWives</opb>
+		<genre>Indie Pop</genre>
+		<year>2017</year>
+	</song>
+
+	<song>
+		<title>Temple</title>
+		<opb>Parson James</opb>
+		<genre>Pop</genre>
+		<year>2016</year>
+	</song>
+
+	<song>
+		<title>Should Have Known Better</title>
+		<opb>Sufjan Stevens</opb>
+		<genre>Alternative</genre>
+		<year>2015</year>
+	</song>
+	
+	<song>
+		<title>Liability</title>
+		<opb>Lorde</opb>
+		<genre>Electropop</genre>
+		<year>2017</year>
+	</song>
+	
+	<song>
+		<title>G Train</title>
+		<opb>Thirdstory</opb>
+		<genre>Pop</genre>
+		<year>2016</year>
+	</song>
+	
+	<song>
+		<title>Take Me Home</title>
+		<opb>Us the Duo</opb>
+		<genre>Pop</genre>
+		<year>2014</year>
+	</song>
+	
+	<song>
+		<title>Danger Zone</title>
+		<opb>Kenny Loggins</opb>
+		<genre>Pop</genre>
+		<year>1986</year>
+	</song>
+	
+	<song>
+		<title>Space Oddity</title>
+		<opb>David Bowie</opb>
+		<genre>Rock</genre>
+		<year>1969</year>
+	</song>
+	
+</songs-list>

@@ -1,0 +1,35 @@
+song-list {
+	display: grid;
+}
+
+song {
+	display: inline-grid;
+	border: 1px solid black;
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 200px;
+}
+
+title {
+	display: block;
+	font-weight: bold;
+	border-bottom: 1px dotted black;
+	margin: 0 5px;
+}
+
+opb {
+	display: block;
+	border-bottom: 1px dotted black;
+	margin: 0 5px;
+}
+
+year {
+	display: block;
+	margin: 0 5px;
+}
+
+genre {
+	display: block;
+	border-bottom: 1px dotted black;
+	margin: 0 5px;
+}
