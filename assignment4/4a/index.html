@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		div.title {
+			display: inline;
+			float: left;
+		}
+	</style>
+	<title>Joe's Hotdogs: Order Online</title>
+</head>
+<body>
+	<h1>Welcome to Joe's Hotdog Stand</h1>
+	<h2>Pricing Info</h2>
+	<h3>Hotdog: $3.25</h3>
+	<h3>French Fries: $2.00</h3>
+	<h3>Soda: $1.50</h3>
+
+    <h1>Your Order</h1>
+	<div class="title">Num Dogs:&nbsp;</div><div id='dogs_count'></div>
+	<div class="title">Cost Dogs: $</div><div id='dogs_cost'></div>
+
+	<div class="title">Num Fries:&nbsp;</div><div id='fries_count'></div>
+	<div class="title">Cost Fries: $</div><div id='fries_cost'></div>
+
+	<div class="title">Num Sodas:&nbsp;</div><div id='sodas_count'></div>
+	<div class="title">Cost Sodas: $</div><div id='sodas_cost'></div>
+
+    <div id='discount'></div>
+    <div class="title">Subtotal: $</div><div id='subtotal'></div>
+    <div class="title">Tax: $</div><div id='tax'></div>
+    <div class="title">Total: $</div><div id='total'></div>
+
+    <script type="text/javascript">
+    	var dogs_count = prompt("How many hotdogs would you like?");
+    	var fries_count = prompt("How many orders of french fries would you like?");
+    	var sodas_count = prompt("How many sodas would you like?");
+
+    	var dogs_cost = 3.25 * dogs_count;
+    	var fries_cost = 2.0 * fries_count;
+    	var sodas_cost = 1.5 * sodas_count;
+
+        var subtotal = dogs_cost + fries_cost + sodas_cost;
+        var discount = (subtotal >= 20.0) ? .1 * subtotal : 0.0;
+        var tax = (subtotal - discount) * 0.0625;
+        var total = (subtotal - discount) + tax;
+
+        document.getElementById("dogs_count").innerHTML = dogs_count;
+        document.getElementById("dogs_cost").innerHTML =  dogs_cost.toFixed(2);
+        document.getElementById("fries_count").innerHTML = fries_count;
+        document.getElementById("fries_cost").innerHTML = fries_cost.toFixed(2);
+        document.getElementById("sodas_count").innerHTML = sodas_count;
+        document.getElementById("sodas_cost").innerHTML = sodas_cost.toFixed(2);
+        document.getElementById("discount").innerHTML = "You qualified for our 10% discount!";
+        document.getElementById("tax").innerHTML = tax.toFixed(2);
+        document.getElementById("subtotal").innerHTML = (subtotal - discount).toFixed(2);
+        document.getElementById("total").innerHTML = total.toFixed(2);
+    </script>
+
+</body>
+
+
+</html>
+
+<!-- Joe’s only sells three items: hotdogs ($3.25 each), French Fries ($2.00 each) and Drinks ($1.50 each).  Because of the low prices, Joe is swamped and is hoping online orders will help to manage the flow of customers better so that he can gain more revenue at peak hours.
+
+When the user opens the page (i.e., enters the url) do the following:
+
+Ask the user for the quantity of hotdogs, fries and sodas they want.
+Calculate the subtotal for the order.
+Implement Joe’s special - 10% discount if the order (before tax) is at least $20
+Add 6.25% Massachusetts meals tax to all orders
+Display all order information on the page including:  Items ordered, quantities, subtotal, discount if applicable, tax and total.
+        alert("1")
+ -->

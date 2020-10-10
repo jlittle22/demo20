@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quick Pick</title>
+	<style type="text/css">
+		div {
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		var input_vals = prompt("Enter the winning numbers separated by a space:", "1 2 3 4 5");
+		var input_lucky = prompt("Enter lucky ball number:", "1");
+		input_vals = input_vals.split(" ").map(function(num) { return parseInt(num, 10); });
+	</script>
+
+	<div>The quick pick numbers are:</div>
+	
+	<script type="text/javascript">
+        let quick_pick = [];
+        var count_nums = 0;
+        while (count_nums < 5) {
+            var val = Math.round(((Math.random() * 47) + 1));
+            if (!quick_pick.includes(val)) {
+            	quick_pick.push(val);
+            	count_nums++;
+            }
+        }
+        quick_pick = quick_pick.sort(function(a, b) { return a - b; });
+        quick_pick.forEach(function(a) { 
+        	                    document.write(a);
+        	                    document.write(" ");
+        });
+	</script>
+
+	<div>The lucky ball number is</div>
+    
+	<script type="text/javascript">
+        var lucky = Math.round((Math.random() * 17) + 1);
+		document.write(lucky);
+	</script>
+
+	<br/>
+	<br/>
+	<div>The winning numbers are</div>
+	<script type="text/javascript">
+        input_vals.forEach(function(a) { 
+        	                    document.write(a);
+        	                    document.write(" ");
+        });
+	</script>
+
+	<div>The lucky ball number is</div>
+
+	<script type="text/javascript">
+		document.write(input_lucky);
+	</script>
+
+    <br/>
+    <br/>
+	<div>You win! Your prize is $</div>
+
+	<script type="text/javascript">
+	    let prizeMapper = new Map();
+
+	    prizeMapper.set("5, 1", "7,000 a WEEK for LIFE");
+	    prizeMapper.set("5, 0", "25,000 a YEAR for LIFE");
+	    prizeMapper.set("4, 1", "5,000");
+	    prizeMapper.set("4, 0", "200");
+	    prizeMapper.set("3, 1", "150");
+	    prizeMapper.set("3, 0", "20");
+	    prizeMapper.set("2, 1", "25");
+	    prizeMapper.set("2, 0", "3");
+	    prizeMapper.set("1, 1", "6");
+	    prizeMapper.set("0, 1", "4");
+ 
+        var count_vals_match = 0;
+        for (var i = 0; i < 5; i++) {
+        	if (quick_pick.includes(input_vals[i]) == true) {
+        		count_vals_match++;
+        		console.log("quickpick contains " + input_vals[i]);
+        	}
+        }
+        var lucky_match = (input_lucky == lucky) ? 1 : 0;
+
+        var res = count_vals_match + ", " + lucky_match;
+        console.log(res);
+        if (prizeMapper.has(res)) {
+        	document.write(prizeMapper.get(res));
+        } else {
+        	document.write("0");
+        }
+	</script>
+
+
+</body>
+</html>
