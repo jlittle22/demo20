@@ -12,7 +12,9 @@
 	<script type="text/javascript">
 		var input_vals = prompt("Enter the winning numbers separated by a space:", "28 30 31 42 43");
 		var input_lucky = prompt("Enter lucky ball number:", "13");
-		input_vals = input_vals.split(" ").map(function(num) { return parseInt(num, 10); });
+		input_vals = input_vals.split(" ")
+		                       .map(function(num) { return parseInt(num, 10); })
+		                       .sort(function(a, b) { return a - b });
 	</script>
 
 	<div>The quick pick numbers are</div>
@@ -59,7 +61,6 @@
 
     <br/>
     <br/>
-	<div style="display: inline;">Your prize is $</div>
 
 	<script type="text/javascript">
 	    let prizeMapper = new Map();
@@ -82,8 +83,21 @@
         		console.log("quickpick contains " + input_vals[i]);
         	}
         }
-        var lucky_match = (input_lucky == lucky) ? 1 : 0;
 
+        if (count_vals_match != 0) {
+        	var msg = (count_vals_match == 1) ? " number matched! " : " numbers matched! ";
+        	document.write(count_vals_match + msg);
+        } else { 
+            document.write("Sorry, no numbers match. ");
+        }
+
+        var lucky_match = (input_lucky == lucky) ? 1 : 0;
+        if (lucky_match == 1) document.write("Lucky ball match!");
+    </script>
+    <br/>
+	<div style="display: inline;">Your prize is $</div>
+
+    <script type="text/javascript">
         var res = count_vals_match + ", " + lucky_match;
         console.log(res);
         if (prizeMapper.has(res)) {
