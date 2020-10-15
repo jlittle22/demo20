@@ -94,9 +94,9 @@
         var num2 = form.elements.item(1).value;
         
         if (isInvalidInput(num1)) {
-            throw "Error: invalid input for number one" + ((num1 == "") ? "" : ": " + num1);
+            throw "Error: invalid input for number one" + ((num1.trim() == "") ? "" : ": " + num1);
         } else if (isInvalidInput(num2)) {
-            throw "Error: invalid input for number two" + ((num2 == "") ? "" : ": " + num2);
+            throw "Error: invalid input for number two" + ((num2.trim() == "") ? "" : ": " + num2);
         }
 
         document.getElementById("display_div").innerHTML = num1 + " & " + num2;
