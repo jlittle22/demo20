@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Amicable?</title>
+    <title>Amicable?</title>
 </head>
 <script type="text/javascript">
-	/*
-	 * Brief: determines if an interger is a factor of another.
-	 * Params: integer num, integer candidate.
-	 * Returns: true when candidate is a factor of num. false otherwise.
-	 */
-	function isFactor(num, candidate) {
+    /*
+     * Brief: determines if an interger is a factor of another.
+     * Params: integer num, integer candidate.
+     * Returns: true when candidate is a factor of num. false otherwise.
+     */
+    function isFactor(num, candidate) {
         return (num % candidate == 0);
-	}
+    }
 
     /* Test Code for isFactor
     alert(isFactor(8, 2));
@@ -21,39 +21,39 @@
     */
 
 
-	/*
-	 * Brief: calculates the sum of the elements in an array
-	 * Params: a value array
-	 * Returns: a value representing the sum
-	 */
+    /*
+     * Brief: calculates the sum of the elements in an array
+     * Params: a value array
+     * Returns: a value representing the sum
+     */
     function addArray(array) {
-    	return array.reduce((accum, curr) => accum + curr);
+        return array.reduce((accum, curr) => accum + curr);
     }
 
     // Test Code for addArray
     // alert(addArray([1, 2, 3, 4, 5]));
 
     /*
-	 * Brief: produces an array representing the values in a range
-	 * Params: integer start, integer end
-	 * Returns: an integer array from [start, end)
-	 */
+     * Brief: produces an array representing the values in a range
+     * Params: integer start, integer end
+     * Returns: an integer array from [start, end)
+     */
     function range(start, end) {
-    	res = [];
-    	for (var i = start; i < end; i++) {
-    		res.push(i);
-    	}
-    	return res;
+        res = [];
+        for (var i = start; i < end; i++) {
+            res.push(i);
+        }
+        return res;
     }
 
     // Test Code for range 
     // alert(range(1, 100));
 
     /*
-	 * Brief: produces an array of integers representing all factors of an input
-	 * Params: integer num
-	 * Returns: an array of all factors of num
-	 */
+     * Brief: produces an array of integers representing all factors of an input
+     * Params: integer num
+     * Returns: an array of all factors of num
+     */
     function getFactors(num) {
         return range(1, (num / 2) + 1).filter((number => candidate => isFactor(number, candidate))(num));
     }
@@ -65,70 +65,70 @@
 
 
     /*
-	 * Brief: formats and displays an array and sum in a div
-	 * Params: array, sum, and div_id string
-	 * Returns: void
-	 */
+     * Brief: formats and displays an array and sum in a div
+     * Params: array, sum, and div_id string
+     * Returns: void
+     */
     function showArray(array, sum, div_id) {
         document.getElementById(div_id).innerHTML = "[ " + array.reduce((accum, curr) => accum + " " + curr, "") + " ] = " + sum;
     }
 
     /*
-	 * Brief: checks if an input number is valid for amicable check
-	 * Params: integer input
-	 * Returns: true if the input is invalid, false otherwise
-	 */
+     * Brief: checks if an input number is valid for amicable check
+     * Params: integer input
+     * Returns: true if the input is invalid, false otherwise
+     */
     function isInvalidInput(input) {
-    	return (isNaN(input) || input == "" || input < 1)
+        return (isNaN(input) || input == "" || input < 1)
     }
 
     /*
-	 * Brief: extracts the numbers from the HTML form, validates, displays, and returns the values
-	 * Params: none
-	 * Returns: an integer array of size 2 representing the first and second inputs
-	 * Throws: invalid input error when the one or both of the input values are invalid
-	 */
-	function getNumbers() {
-		var form = document.getElementById("input_two_numbers");
-		var num1 = form.elements.item(0).value;
-		var num2 = form.elements.item(1).value;
+     * Brief: extracts the numbers from the HTML form, validates, displays, and returns the values
+     * Params: none
+     * Returns: an integer array of size 2 representing the first and second inputs
+     * Throws: invalid input error when the one or both of the input values are invalid
+     */
+    function getNumbers() {
+        var form = document.getElementById("input_two_numbers");
+        var num1 = form.elements.item(0).value;
+        var num2 = form.elements.item(1).value;
         
         if (isInvalidInput(num1)) {
-        	throw "Error: invalid input for number one" + ((num1 == "") ? "" : ": " + num1);
+            throw "Error: invalid input for number one" + ((num1 == "") ? "" : ": " + num1);
         } else if (isInvalidInput(num2)) {
-        	throw "Error: invalid input for number two" + ((num2 == "") ? "" : ": " + num2);
+            throw "Error: invalid input for number two" + ((num2 == "") ? "" : ": " + num2);
         }
 
-		document.getElementById("display_div").innerHTML = num1 + " & " + num2;
-		return [num1, num2];
-	}
-
-    /*
-	 * Brief: sets an elements display to inline-block
-	 * Params: elem_id string
-	 * Returns: none
-	 */
-    function setElementVisibility(elem_id) {
-    	document.getElementById(elem_id).style.display = "inline-block";
+        document.getElementById("display_div").innerHTML = num1 + " & " + num2;
+        return [num1, num2];
     }
 
     /*
-	 * Brief: main driver function for program - run on click event.
-	 * Params: none
-	 * Returns: void
-	 */
-    function clickHandler() {
-    	var nums;
-    	try {
-    	    nums = getNumbers();
-    	} catch (err) {
-    		alert(err);
-    		return;
-    	}
-    	const result_div = document.getElementById("result_div")
+     * Brief: sets an elements display to inline-block
+     * Params: elem_id string
+     * Returns: none
+     */
+    function setElementVisibility(elem_id) {
+        document.getElementById(elem_id).style.display = "inline-block";
+    }
 
-    	const factors_one = getFactors(nums[0]);
-    	const factors_two = getFactors(nums[1]);
+    /*
+     * Brief: main driver function for program - run on click event.
+     * Params: none
+     * Returns: void
+     */
+    function clickHandler() {
+        var nums;
+        try {
+            nums = getNumbers();
+        } catch (err) {
+            alert(err);
+            return;
+        }
+        const result_div = document.getElementById("result_div")
+
+        const factors_one = getFactors(nums[0]);
+        const factors_two = getFactors(nums[1]);
         
         const one_sum = addArray(factors_one);
         const two_sum = addArray(factors_two);
@@ -137,11 +137,11 @@
         setElementVisibility("separator");
         showArray(factors_two, two_sum, "num_two_array_div");
 
-    	if (one_sum == nums[1] && two_sum == nums[0]) {
+        if (one_sum == nums[1] && two_sum == nums[0]) {
             result_div.innerHTML = "Yes!";
-    	} else {
-    		result_div.innerHTML = "No."
-    	}
+        } else {
+            result_div.innerHTML = "No."
+        }
     }
 
     // set event listener for onclick 
@@ -155,52 +155,52 @@
 </script>
 
 <style type="text/css">
-	.content {
-		display: block; 
-		position: absolute;
-		height: 35%; 
-		width: 50%; 
-		left: 25%; 
-		top: 37%; 
-		right: 25%; 
-		text-align: center;
-	}
+    .content {
+        display: block; 
+        position: absolute;
+        height: 35%; 
+        width: 50%; 
+        left: 25%; 
+        top: 37%; 
+        right: 25%; 
+        text-align: center;
+    }
 
-	.header {
-		font-weight: bold;
-		font-size: 56px;
-		margin-bottom: 1%;
-	}
+    .header {
+        font-weight: bold;
+        font-size: 56px;
+        margin-bottom: 1%;
+    }
 
-	input[type *= "text"] {
-		width: 40%;
-	}
+    input[type *= "text"] {
+        width: 40%;
+    }
 
-	input[type *= "button"] {
-		display: block;
-		width: 20%;
-		margin: 1% auto;
-	}
+    input[type *= "button"] {
+        display: block;
+        width: 20%;
+        margin: 1% auto;
+    }
 
 </style>
 
 <body>
     <div class="content">
-	    <div class="header">Amicable?</div>
-    	<form id="input_two_numbers">
-    		<input type="text" name="number_one" placeholder="Number One">
-    		<input type="text" name="number_two" placeholder="Number Two"><br/>
-    		<input type="button" name="submit" value="Check!">
-    	</form>
-    	<div style="font-weight: bold;" id="display_div">&nbsp;</div>
+        <div class="header">Amicable?</div>
+        <form id="input_two_numbers">
+            <input type="text" name="number_one" placeholder="Number One">
+            <input type="text" name="number_two" placeholder="Number Two"><br/>
+            <input type="button" name="submit" value="Check!">
+        </form>
+        <div style="font-weight: bold;" id="display_div">&nbsp;</div>
         
-    	<div style="display: inline-block;" id="num_one_array_div">&nbsp;</div>
+        <div style="display: inline-block;" id="num_one_array_div">&nbsp;</div>
 
-    	<div style="display: none; font-weight: bold;" id="separator">VS</div>
+        <div style="display: none; font-weight: bold;" id="separator">VS</div>
         
-    	<div style="display: inline-block;" id="num_two_array_div">&nbsp;</div>
+        <div style="display: inline-block;" id="num_two_array_div">&nbsp;</div>
 
-    	<div style="font-weight: bold; font-size: 29px;" id="result_div">&nbsp;</div>
+        <div style="font-weight: bold; font-size: 29px;" id="result_div">&nbsp;</div>
     </div>
 </body>
 </html>
