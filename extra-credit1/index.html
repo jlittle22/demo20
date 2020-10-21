@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text Boxes</title>
+	<script type="text/javascript">
+
+		function toggleButtonDirection() {
+			const button = document.getElementById("button");
+			const text_input_one = document.getElementById("text_one");
+			const text_input_two = document.getElementById("text_two");
+
+			if (button.innerHTML == "-&gt;") {
+				moveTextInputContents(text_input_one, text_input_two);
+		        button.innerHTML = "<-";
+			} else {
+				moveTextInputContents(text_input_two, text_input_one);
+				button.innerHTML = "->";
+			}
+		}
+
+		function moveTextInputContents(source, destination) {
+            destination.value = source.value;
+            source.value = "";
+		}
+
+        function processClick() {
+            toggleButtonDirection();
+            swapTextInputContents();
+        }
+
+		window.onload = function () {
+            document.getElementById("button").addEventListener("click", toggleButtonDirection);
+		}
+	</script>
+</head>
+<body>
+	<div style="text-align: center; margin-top: 25%;">
+		<input type="text" id="text_one" placeholder="Enter Text">
+		<button id="button">-></button>
+		<input type="text" id="text_two" placeholder="Enter Text">
+	</div>
+
+</body>
+</html>
