@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quotes from Greatness</title>
+    <style type="text/css">
+    	h1 {
+    		text-align: center;
+    	}
+    	p {
+    		text-align: center;
+    	}
+    </style>
+    <script type = "text/javascript" 
+        src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+    	const settings = {
+	                      "async": true,
+	                      "crossDomain": true,
+	                      "url": "https://matchilling-tronald-dump-v1.p.rapidapi.com/random/quote",
+	                      "method": "GET",
+	                      "headers": {
+		                      "accept": "application/hal+json",
+		                      "x-rapidapi-key": "0bb8c8609dmshc823ab12e17ec8bp1c6d7ejsn7f0481fc6b22",
+		                      "x-rapidapi-host": "matchilling-tronald-dump-v1.p.rapidapi.com"
+        	}
+        };
+
+        $.ajax(settings).done(function (response) {
+        	console.log(response._links.self.href);
+        	$('#output').html('"' + response.value + '"');
+        	$('#link').attr('href', response._links.self.href);
+        	$('#link').html(response._links.self.href)
+        });
+
+        function refresh() {
+        	location.reload();
+        }
+    </script>
+</head>
+<body>
+	<h1>Quotes from Greatness</h1>
+    <p id="output">&nbsp;</p>
+    <p>- Donald J. Trump</p>
+    <p>President-Reject of the United States</p>
+    <p><a id="link" href="#" target="_blank"></a></p>
+    <p><button onclick="refresh()">Another one...</button></p>
+</body>
+</html>

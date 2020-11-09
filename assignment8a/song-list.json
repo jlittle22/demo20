@@ -1,0 +1,73 @@
+{
+    "song_list" : [
+        {
+        	"title" : "T-Shirt",
+        	"opb" : "Foo Fighters",
+        	"genre" : ["Alternative", "Rock"],
+        	"year" : 2017
+        },
+
+        {
+        	"title" : "Dreams",
+        	"opb" : "Beck",
+        	"genre" : ["Rock"],
+        	"year" : 2015
+        },
+
+        {
+        	"title" : "Never Give Up On Me",
+        	"opb" : "MisterWives",
+        	"genre" : ["Indie", "Pop"],
+        	"year" : 2017
+        },
+
+        {
+        	"title" : "Temple",
+        	"opb" : "Parson James",
+        	"genre" : ["Pop"],
+        	"year" : 2016
+        },
+
+        {
+        	"title" : "Should Have Known Better",
+        	"opb" : "Sufjan Stevens",
+        	"genre" : ["Alternative"],
+        	"year" : 2015
+        },
+
+        {
+        	"title" : "Liability",
+        	"opb" : "Lorde",
+        	"genre" : ["Electropop"],
+        	"year" : 2017
+        },
+
+        {
+        	"title" : "G Train",
+        	"opb" : "Thirdstory",
+        	"genre" : ["Pop"],
+        	"year" : 2016
+        },
+
+        {
+        	"title" : "Take Me Home",
+        	"opb" : "Us the Duo",
+        	"genre" : ["Pop"],
+        	"year" : 2014
+        },
+
+        {
+        	"title" : "Danger Zone",
+        	"opb" : "Kenny Loggins",
+        	"genre" : ["Pop"],
+        	"year" : 1986
+        },
+
+        {
+        	"title" : "Space Oddity",
+        	"opb" : "David Bowie",
+        	"genre" : ["Rock"],
+        	"year" : 1969
+        }
+    ]
+}
