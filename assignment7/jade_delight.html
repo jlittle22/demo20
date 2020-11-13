@@ -166,15 +166,15 @@ function validateForm() {
 
     order_time = new Date((new Date()).getTime() + num_minutes * 60000);
 
-    order_str = "Thanks for your order! Here are the details. <br/>";
-    order_str += "<br/>&nbsp;&nbsp;&nbsp;&nbsp;Order:<br/>";
-    order_str += getOrder();
-    order_str += action + " by: ";
-    order_str += formatTime(order_time.getHours(), order_time.getMinutes(),
-    	                    order_time.getSeconds());
-    order_str += "<br/>Total: $" + $("#total").val();
+//    order_str = "Thanks for your order! Here are the details. <br/>";
+//    order_str += "<br/>&nbsp;&nbsp;&nbsp;&nbsp;Order:<br/>";
+//    order_str += getOrder();
+//    order_str += action + " by: ";
+//    order_str += formatTime(order_time.getHours(), order_time.getMinutes(),
+//    	                    order_time.getSeconds());
+//    order_str += "<br/>Total: $" + $("#total").val();
     
-    html = "<!DOCTYPE html>\
+/*    html = "<!DOCTYPE html>\
                   <html>\
                   <head>\
                   	<title>Jade Delight: Your Order</title>\
@@ -184,6 +184,7 @@ function validateForm() {
 
     win = window.open();
     win.document.write(html);
+*/
     return true;
 }
 
